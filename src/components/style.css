@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --main-color: #0a9396;
+    --primary-color: #f9f4f0;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins';
+    background-color: #f9f4f0;
+}
+
+.NavBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.NavBar .Logo{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.NavBar ul{
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+ul li{
+    cursor: pointer;
+}
+
+.NavBar button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins';
+}
+
+/*CSS Code for the FirstContent File*/
+
+.main{
+margin-top: 50px;
+width: 100%;
+height: 80vh;
+}
+
+.TextContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;    
+}
+
+.TextContainer .Text{
+  border-radius: 30px;
+  padding: 5px 20px;
+  color: var(--main-color);
+  background-color: white;
+
+}
+
+.LargeText{
+    text-align: center;
+}
+
+.LargeText > p{
+font-size: 50px;
+font-weight: 800;
+color: var(--main-color);
+line-height: 65px;
+}
+
+.LargeText .SubText{
+    text-align: center;
+    margin: 20px 0px; /* T B */
+}
+
+.JoinCommunityContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.JoinCommunityContainer .subContainer{
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding-left:15px; /* T R B L */
+}
+
+.subContainer input{
+    border: none;
+    outline: none;
+}
+
+.subContainer button{
+    background-color: #0a9396;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+input::placeholder{
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-family: 'Poppins';
+}
+
+
+/*CSS Code for the SecondContent File*/
+
+.TopText{
+    text-align: center;
+}
+
+.TopText h1{
+    font-size: 40px;
+    color: var(--main-color);
+}
+
+.TopText p{
+    line-height: 15px;
+}
