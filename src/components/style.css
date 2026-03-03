@@ -127,7 +127,7 @@ input::placeholder{
 }
 
 
-/*CSS Code for the SecondContent File*/
+/*CSS Code for the SecondContent File(Features page)*/
 
 .TopText{
     text-align: center;
@@ -140,4 +140,52 @@ input::placeholder{
 
 .TopText p{
     line-height: 15px;
+    margin-bottom: 30px;
+}
+
+.features-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: lightcoral;
+
+}
+
+.features-grid .box{
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    padding: 25px;
+    margin: 10px;
+    
+}
+
+.box p{
+    margin: 10px 0px;
+}
+
+.box .box-title{
+    font-weight: 800;
+    color: var(--main-color);
+}
+
+.box button{
+    background-color: #0a9396;
+    color: white;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    margin: 15px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.box-pic{
+    width: 40px;
+}
+
+.box .arrow{
+    width: 20px;
+    margin-left: 10px;
 }
