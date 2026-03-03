@@ -143,11 +143,13 @@ input::placeholder{
     margin-bottom: 30px;
 }
 
-.features-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    background-color: lightcoral;
 
+.features-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1 1 300px;
+    gap: 30px;
 }
 
 .features-grid .box{
@@ -155,8 +157,7 @@ input::placeholder{
     height: 300px;
     background-color: white;
     padding: 25px;
-    margin: 10px;
-    
+    margin: 10px ;
 }
 
 .box p{
