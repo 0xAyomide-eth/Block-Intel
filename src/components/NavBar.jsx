@@ -12,7 +12,7 @@ function NavBar() {
                     <li>Features</li>
                 </ul>
             </div>
-            <button>Get Started</button>
+            <button style={{cursor:"pointer"}}>Get Started</button>
         </div>
     )
 }
