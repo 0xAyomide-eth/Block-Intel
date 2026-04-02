@@ -1,4 +1,5 @@
 import '../App.css'
+import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (
@@ -12,7 +13,9 @@ function NavBar() {
                     <li>Features</li>
                 </ul>
             </div>
-            <button style={{cursor:"pointer"}}>Get Started</button>
+            <Link to="/signup">
+                <button style={{ cursor: "pointer" }}>Get Started</button>
+            </Link>
         </div>
     )
 }

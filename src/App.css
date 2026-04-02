@@ -189,3 +189,9 @@ input::placeholder{
     width: 20px;
     margin-left: 10px;
 }
+
+/*SIGN UP PAGE DESIGN*/
+
+.main-signup button{
+font-family: 'Poppins';
+}
