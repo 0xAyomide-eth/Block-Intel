@@ -1,31 +1,72 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
+import { supabase } from "../supaBaseClient"
+import { Link } from "react-router-dom";
 
-export default function SignUp(){
-  const [Password, setPassword] = useState("")
-  const [inputType, setinputType] = useState("password")
- 
+export default function SignUp() {
+    const [formdata, setformdata] = useState({
+        username: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+    })
 
+const navigate = useNavigate()
 
-    return(
+    const handleChange = (e) => {
+        setformdata({ ...formdata, [e.target.name]: e.target.value });
+    };
+
+    const handleSignUp = async (e) => {
+        e.preventDefault();
+
+        /*if (formdata.password !== formdata.confirmPassword) {
+            alert("passwords dont match!")
+            return
+        }*/
+
+        //signup part
+        const { data, error } = await supabase.auth.signUp({
+            email: formdata.email,
+            password: formdata.password,
+            options: {
+                data: {
+                    username: formdata.username,
+                }
+            }
+        })
+
+        if (error) {
+            alert(error.message)
+        } else {
+            navigate("/dashboard")
+        }
+
+    }
+
+    return (
         <>
-        <div className="main-signup">
-            <div className="signup">
-              <form action="POST">
-                <input type="text" placeholder="Username" />
-                <br />
-                <input type="email" placeholder="Email" />
-                <br />
-                <input type="password" placeholder="Password" />
-                <br />
-                <input type="text" placeholder="confirm password"/>
-                <br />
-                <button type="button">Sign Up</button>
-              </form>
+            <div className="main-signup">
+                <h1>Create Account</h1>
+                <div className="signup">
+                    <form onSubmit={handleSignUp}>
+                        <input type="text" name="username" placeholder="Username" onChange={handleChange} />
+                        <br />
+                        <input type="email" name="email" placeholder="Email" onChange={handleChange} />
+                        <br />
+                        <input type="text" name="password" placeholder="Password" onChange={handleChange} />
+                        <br />
+                        <input type="text" name="confirmpassword" placeholder="confirm password" onChange={handleChange} />
+                        <br />
+                        <button type="submit" style={{ cursor: "pointer" }}>Sign Up</button>
+                        <Link to="/login">
+                        <button>Already have an Account?</button>
+                        </Link>
+                    </form>
+                </div>
+                <div className="signup-img-box">
+                </div>
             </div>
-            <div className="signup-img-box">
-
-            </div>
-        </div>
         </>
     )
 }
