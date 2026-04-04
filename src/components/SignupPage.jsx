@@ -4,6 +4,9 @@ import { supabase } from "../supaBaseClient"
 import { Link } from "react-router-dom";
 
 export default function SignUp() {
+
+    const green = "#0a9396"
+
     const [formdata, setformdata] = useState({
         username: '',
         email: '',
@@ -11,7 +14,7 @@ export default function SignUp() {
         confirmPassword: ''
     })
 
-const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         setformdata({ ...formdata, [e.target.name]: e.target.value });
@@ -47,9 +50,12 @@ const navigate = useNavigate()
     return (
         <>
             <div className="main-signup">
-                <h1>Create Account</h1>
                 <div className="signup">
                     <form onSubmit={handleSignUp}>
+                        <div>
+                            <p style={{ fontWeight: "bold", fontSize: "22px", color:green }}>Get Started</p>
+                            <p style={{ marginTop: "5px", color: "grey" }}>Welcome to Block Intel</p>
+                        </div>
                         <input type="text" name="username" placeholder="Username" onChange={handleChange} />
                         <br />
                         <input type="email" name="email" placeholder="Email" onChange={handleChange} />
@@ -58,10 +64,14 @@ const navigate = useNavigate()
                         <br />
                         <input type="text" name="confirmpassword" placeholder="confirm password" onChange={handleChange} />
                         <br />
-                        <button type="submit" style={{ cursor: "pointer" }}>Sign Up</button>
-                        <Link to="/login">
-                        <button>Already have an Account?</button>
-                        </Link>
+                        <button type="submit" className="SignUp-btn">Sign Up</button>
+                        <br />
+                        <div className="userHasAcct">
+                            <p>Already have an Account?</p>
+                            <Link to="/login">
+                                <button>Log in</button>
+                            </Link>
+                        </div>
                     </form>
                 </div>
                 <div className="signup-img-box">
