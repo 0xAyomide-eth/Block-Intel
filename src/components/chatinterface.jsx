@@ -6,7 +6,6 @@ import { z } from "zod";
 import './styless.css';
 
 
-// ================= AI MODEL =================
 const model = new ChatGoogle({
   apiKey: import.meta.env.
   model: "gemini-3-flash-preview",
@@ -14,7 +13,7 @@ const model = new ChatGoogle({
 });
 
 
-// ================= TOOL =================
+
 const GetCryptoPrice = tool(
   async ({ symbol }) => {
     try {
@@ -52,21 +51,21 @@ const GetCryptoPrice = tool(
 );
 
 
-// ================= AGENT =================
+
 const agent = createAgent({
   model,
   tools: [GetCryptoPrice]
 });
 
 
-// ================= COMPONENT =================
+
 const ChatInterface = ({ user }) => {
 
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState("");
 
 
-// ================= SEND MESSAGE =================
+
   const handleSend = async () => {
 
     if (!inputText.trim()) return;
@@ -117,7 +116,7 @@ const ChatInterface = ({ user }) => {
   };
 
 
-// ================= ENTER KEY =================
+
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -126,7 +125,7 @@ const ChatInterface = ({ user }) => {
   };
 
 
-// ================= UI =================
+
   return (
     <div className="chat-container">
 
