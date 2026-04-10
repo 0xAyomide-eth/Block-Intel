@@ -2,8 +2,6 @@ import 'dotenv/config'
 import { tool } from "langchain"
 import { z } from "zod"
 
-
-
 export const cryptoPrice = tool(
     async ({ symbol }) => {
         try {
