@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import { tool } from "langchain"
+import { tool } from "@langchain/core/tools"
 import { z } from "zod"
 
 export const cryptoPrice = tool(
