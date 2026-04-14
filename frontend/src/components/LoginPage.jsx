@@ -2,10 +2,9 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supaBaseClient"
 import { Link } from "react-router-dom";
+import "./styles/Login.css"
 
 export default function LoginPage() {
-
-  const green = "#0a9396"
 
   const [loginData, SetloginData] = useState({
     email: "",
@@ -39,7 +38,7 @@ export default function LoginPage() {
         <div className="login">
           <form onSubmit={handleLogin}>
             <div>
-              <p style={{ fontWeight: "bold", fontSize: "22px", color: green }}>Login</p>
+              <p className="Login-text">Login</p>
               <p style={{ marginTop: "5px", color: "grey" }}>Welcome back to Block Intel!</p>
             </div>
             <input type="text" name="email" onChange={handleChange} placeholder="Email" />
@@ -58,6 +57,11 @@ export default function LoginPage() {
           </form>
         </div>
         <div className="login-img-box">
+          <div className="login-text-box">
+            <p className="welcome">welcome back to</p>
+            <h1>Block Intel</h1>
+            <p className="meaning">Your premier crypto intelligence agent.</p>
+          </div>
         </div>
       </div>
     </>

@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --main-color: #0a9396;
-    --primary-color: #f9f4f0;
+    --main-color: #FFAF7B;
 }
 
 * {
@@ -13,42 +12,7 @@
 
 body {
     font-family: 'Poppins';
-    background-color: #f9f4f0;
-}
-
-.NavBar {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 15px;
-}
-
-.NavBar .Logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--main-color);
-}
-
-.NavBar ul {
-    list-style-type: none;
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-ul li {
-    cursor: pointer;
-}
-
-.NavBar button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: var(--main-color);
-    color: white;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Poppins';
+    background-color: white;
 }
 
 /*CSS Code for the FirstContent File*/
@@ -128,234 +92,14 @@ input::placeholder {
 }
 
 
-/*CSS Code for the SecondContent File(Features page)*/
-
-.TopText {
-    text-align: center;
-}
-
-.TopText h1 {
-    font-size: 40px;
-    color: var(--main-color);
-}
-
-.TopText p {
-    line-height: 15px;
-    margin-bottom: 30px;
-}
-
-
-.features-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex: 1 1 300px;
-    gap: 30px;
-}
-
-.features-grid .box {
-    width: 300px;
-    height: 320px;
-    background-color: white;
-    padding: 25px;
-    margin: 10px;
-}
-
-.box p {
-    margin: 10px 0px;
-}
-
-.box .box-title {
-    font-weight: 800;
-    color: var(--main-color);
-}
-
-.box button {
-    background-color: #0a9396;
-    color: white;
-    padding: 10px 40px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: inherit;
-    margin: 15px 0px;
-    display: flex;
-    align-items: center;
-}
-
-.box-pic {
-    width: 40px;
-}
-
-.box .arrow {
-    width: 20px;
-    margin-left: 10px;
-}
-
-/*SIGN UP PAGE DESIGN*/
-
-.main-signup {
-    display: flex;
-}
-
-.main-signup .signup {
-    flex: 1;
-    align-content: center;
-    justify-items: center;
-
-}
-
-.signup form .SignUp-btn {
-    cursor: pointer;
-    width: 250px;
-    padding: 10px 5px;
-    background-color: var(--main-color);
-    color: white;
-    font-weight: 700;
-    font-family: 'Poppins';
-    border: none;
-    border-radius: 5px;
-}
-
-form .userHasAcct {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-.userHasAcct p {
-    color: grey;
-}
-
-.userHasAcct button {
-    border: none;
-    background: transparent;
-    font-family: "Poppins";
-    cursor: pointer;
-    font-weight: 700;
-}
-
-.signup input {
-    width: 250px;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 10px 0px;
-    border: 0.12rem solid black;
-}
-
-input:focus {
-    border-color: var(--main-color);
-    outline: none;
-}
-
-.main-signup .signup-img-box {
-    flex: 1;
-    background-image: url('../src/assets/signup-pic.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-}
-
-
-
-
-
-/*LOGIN PAGE DESIGN*/
-
-.Login-Page {
-    display: flex;
-}
-
-.Login-Page .login {
-    flex: 1;
-    align-content: center;
-    justify-items: center;
-}
-
-.login form .Login-btn {
-    cursor: pointer;
-    width: 250px;
-    padding: 10px 5px;
-    background-color: var(--main-color);
-    color: white;
-    font-weight: 700;
-    font-family: 'Poppins';
-    border: none;
-    border-radius: 5px;
-}
-
-form .UserNoAcct {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-.UserNoAcct p {
-    color: grey;
-}
-
-.UserNoAcct button {
-    border: none;
-    background: transparent;
-    font-family: "Poppins";
-    cursor: pointer;
-    font-weight: 600;
-}
-
-
-
-.login input {
-    width: 250px;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 10px 0px;
-    border: 0.12rem solid black;
-}
-
-input:focus {
-    border-color: var(--main-color);
-    outline: none;
-}
-
-.Login-Page button {
-    font-family: 'Poppins';
-}
-
-.Login-Page .login-img-box {
-    flex: 1;
-    background-image: url('../src/assets/signup-pic.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-}
-
-form .forgot-password{
-    font-size: 12px;
-    margin-top: 5px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.forgot-password:hover{
-    text-decoration: underline;
-}
-
-
 /*DASHBOARD DESIGN*/
-
-
-
-.Dashboard .User{
+.Dashboard .User {
     color: var(--main-color);
     margin-left: 5px;
     font-size: 24px;
 }
 
-.Dashboard .Dashboard-Greeting{
-display: flex;
-align-items: center;
+.Dashboard .Dashboard-Greeting {
+    display: flex;
+    align-items: center;
 }

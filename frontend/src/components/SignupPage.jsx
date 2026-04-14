@@ -2,10 +2,9 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supaBaseClient"
 import { Link } from "react-router-dom";
+import "./styles/SignUp.css"
 
 export default function SignUp() {
-
-    const green = "#0a9396"
 
     const [formdata, setformdata] = useState({
         username: '',
@@ -22,11 +21,6 @@ export default function SignUp() {
 
     const handleSignUp = async (e) => {
         e.preventDefault();
-
-        /*if (formdata.password !== formdata.confirmPassword) {
-            alert("passwords dont match!")
-            return
-        }*/
 
         //signup part
         const { data, error } = await supabase.auth.signUp({
@@ -53,7 +47,7 @@ export default function SignUp() {
                 <div className="signup">
                     <form onSubmit={handleSignUp}>
                         <div>
-                            <p style={{ fontWeight: "bold", fontSize: "22px", color:green }}>Get Started</p>
+                            <p  className="getStarted">Get Started</p>
                             <p style={{ marginTop: "5px", color: "grey" }}>Welcome to Block Intel</p>
                         </div>
                         <input type="text" name="username" placeholder="Username" onChange={handleChange} />
@@ -75,6 +69,11 @@ export default function SignUp() {
                     </form>
                 </div>
                 <div className="signup-img-box">
+                    <div className="signup-text-box">
+                        <p className="welcome">welcome to</p>
+                        <h1>Block Intel</h1>
+                        <p className="meaning">Your premier crypto intelligence agent.</p>
+                    </div>
                 </div>
             </div>
         </>

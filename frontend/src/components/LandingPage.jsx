@@ -1,16 +1,16 @@
 import '../App.css'
 
-function FirstContent() {
+function LandingPage() {
     return (
         <>
             <div className='main'>
                 <div className='TextContainer'>
-                    <p className='Text'>software enginnering project</p>
+                    <p className='Text'>Block Intel v1.0 </p>
                 </div>
                 <div className='LargeText'>
-                    <p>Empowering crypto search with <br /> AI Innovation</p>
+                    <p>Transforming raw data <br /> into market alpha</p>
                     <div className="SubText">
-                        <p>    Transforming fragmented blockchain data into instant, actionable intelligence <br /> through semantic discovery and real-time risk assessment. </p>
+                        <p>Real-time intelligence through semantic discovery. </p>
                     </div>
                 </div>
                 <div className='JoinCommunityContainer'>
@@ -24,4 +24,4 @@ function FirstContent() {
     )
 }
 
-export default FirstContent;
+export default LandingPage;
