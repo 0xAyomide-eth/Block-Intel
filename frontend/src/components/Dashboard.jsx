@@ -28,9 +28,7 @@ export default function Dashboard() {
             <div>
                 <div className="Dashboard">
                     <ChatInterface user={actualUser}/>
-                    <button onClick={() => supabase.auth.signOut().then(() => navigate("/login"))}>
-                        Logout
-                    </button>
+
                 </div>
             </div>
         </>

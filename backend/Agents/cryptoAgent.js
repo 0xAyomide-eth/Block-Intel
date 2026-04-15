@@ -15,6 +15,6 @@ export const CryptoAgent = createAgent({
     model,
     tools: [
         cryptoPrice,
-        cryptoResearch
+        cryptoResearch,
     ]
 })
