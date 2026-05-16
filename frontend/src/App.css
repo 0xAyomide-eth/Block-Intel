@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root {
-    --main-color: #FFAF7B;
-}
 
 * {
     padding: 0;
@@ -20,6 +17,11 @@ body {
 .main {
     margin-top: 50px;
     width: 100%;
+    min-height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
 }
 
 .TextContainer {
@@ -27,31 +29,53 @@ body {
     align-items: center;
     justify-content: center;
     margin: 20px 0px;
+    animation: fadeInUp 0.6s ease;
 }
 
 .TextContainer .Text {
     border-radius: 30px;
     padding: 5px 20px;
-    color: var(--main-color);
-    background-color: white;
+    color: #3b82f6;
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border: 1px solid #e2e8f0;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
 
+.TextContainer .Text:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    border-color: #3b82f6;
 }
 
 .LargeText {
     text-align: center;
+    animation: fadeInUp 0.6s ease 0.2s both;
 }
 
 .LargeText>p {
     font-size: 50px;
     font-weight: 800;
-    color: var(--main-color);
+    background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     line-height: 65px;
+    animation: gradientShift 3s ease infinite;
 }
 
 .LargeText .SubText {
     text-align: center;
     margin: 20px 0px;
-    /* T B */
+}
+
+.LargeText .SubText p {
+    color: #64748b;
+    font-size: 18px;
+    font-weight: 400;
+    animation: fadeInUp 0.6s ease 0.4s both;
 }
 
 .JoinCommunityContainer {
@@ -59,38 +83,104 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-
+    animation: fadeInUp 0.6s ease 0.6s both;
 }
 
 .JoinCommunityContainer .subContainer {
-    background-color: white;
+    background: white;
     border: none;
-    border-radius: 5px;
-    padding-left: 15px;
-    /* T R B L */
+    border-radius: 8px;
+    padding: 3px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
 .subContainer input {
     border: none;
     outline: none;
-}
-
-.subContainer button {
-    background-color: #0a9396;
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: inherit;
-}
-
-input::placeholder {
-    font-size: 12px;
-    letter-spacing: 1px;
+    padding: 10px;
     font-family: 'Poppins';
 }
 
+.subContainer button {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    background-size: 200% auto;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.subContainer button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+    background-position: right center;
+}
+
+.subContainer button:active {
+    transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .LargeText>p {
+        font-size: 32px;
+        line-height: 42px;
+    }
+    
+    .LargeText .SubText p {
+        font-size: 14px;
+        padding: 0 20px;
+    }
+    
+    .TextContainer .Text {
+        font-size: 14px;
+    }
+    
+    .subContainer button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .LargeText>p {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    
+    .LargeText .SubText p {
+        font-size: 12px;
+    }
+}
 
 /*DASHBOARD DESIGN*/
 .Dashboard .User {
@@ -103,3 +193,4 @@ input::placeholder {
     display: flex;
     align-items: center;
 }
+

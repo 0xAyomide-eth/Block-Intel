@@ -3,15 +3,19 @@ import TextareaAutosize from 'react-textarea-autosize';
 import { sendMessage } from '../../utils/api'
 import { supabase } from "../supaBaseClient"
 import { useNavigate } from "react-router-dom"
-import { Menu } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import './styles/chatInterface.css';
 
 const ChatInterface = ({ user }) => {
   const navigate = useNavigate()
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState("");
-  //for titles
   const [ShortenTitle, NewshortenTitle] = useState([])
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   const handleSend = async () => {
 
@@ -76,8 +80,6 @@ const ChatInterface = ({ user }) => {
 
   };
 
-
-
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -85,24 +87,33 @@ const ChatInterface = ({ user }) => {
     }
   };
 
-
-
   return (
     <div className="main-dashboard">
-      <div className="sidebar">
+      <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-header">
-          <Menu />
-          <p>Block Intel</p>
+          <div className="logo-area">
+            {isSidebarOpen && <p>Block Intel</p>}
+          </div>
+          <button 
+            className="toggle-btn"
+            onClick={toggleSidebar}
+            aria-label="Toggle sidebar"
+          >
+            {isSidebarOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
-        {ShortenTitle}
-        <div>
-
+        
+        <div className="sidebar-footer">
+          <button 
+            className="logout-btn"
+            onClick={() => supabase.auth.signOut().then(() => navigate("/login"))}
+          >
+            {isSidebarOpen && <span>Logout</span>}
+          </button>
         </div>
-        <button onClick={() => supabase.auth.signOut().then(() => navigate("/login"))}>
-          Logout
-        </button>
       </div>
-      <div className="chat-container">
+      
+      <div className={`chat-container ${isSidebarOpen ? 'sidebar-open' : ''}`}>
         <header className="chat-header">
           <p>welcome {user}</p>
         </header>

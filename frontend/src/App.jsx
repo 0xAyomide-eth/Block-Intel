@@ -1,5 +1,4 @@
 import './App.css'
-import Navbar from './components/NavBar'
 import LandingPage from './components/LandingPage'
 import SignUp from './components/SignupPage'
 import LoginPage from './components/LoginPage'
@@ -14,7 +13,6 @@ function App() {
           path='/' //this is for the home route
           element={
             <>
-              <Navbar />
               <LandingPage />
             </>
           } />

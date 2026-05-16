@@ -2,43 +2,55 @@
 
 .main-signup {
     display: flex;
+    min-height: 100vh;
 }
 
 .main-signup .signup {
     flex: 1;
     align-content: center;
     justify-items: center;
-
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    transition: all 0.3s ease;
 }
 
 .signup .getStarted {
-    background: #3A1C71;
-    background: -webkit-linear-gradient(to right, #FFAF7B, #D76D77, #FFAF7B);
-    background: linear-gradient(to right, #FFAF7B, #D76D77, #FFAF7B);
-
-    /* The magic for text */
+    background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-
     display: inline-block;
     font-weight: bold;
     font-size: 22px;
+    transition: all 0.3s ease;
+    animation: gradientShift 3s ease infinite;
 }
 
 .signup form .SignUp-btn {
     cursor: pointer;
     width: 250px;
     padding: 10px 5px;
-    background: #3A1C71;
-    background: -webkit-linear-gradient(to right, #FFAF7B, #D76D77, #FFAF7B);
-    background: linear-gradient(to right, #FFAF7B, #D76D77, #FFAF7B);
+    background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8);
+    background-size: 200% auto;
     color: white;
     font-weight: 700;
     font-family: 'Poppins';
     border: none;
     border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.signup form .SignUp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+    background-position: right center;
+}
+
+.signup form .SignUp-btn:active {
+    transform: translateY(0);
 }
 
 form .userHasAcct {
@@ -47,10 +59,12 @@ form .userHasAcct {
     justify-content: space-between;
     font-size: 12px;
     margin-top: 5px;
+    gap: 10px;
 }
 
 .userHasAcct p {
-    color: grey;
+    color: #64748b;
+    transition: color 0.3s ease;
 }
 
 .userHasAcct button {
@@ -59,6 +73,14 @@ form .userHasAcct {
     font-family: "Poppins";
     cursor: pointer;
     font-weight: 700;
+    color: #3b82f6;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.userHasAcct button:hover {
+    color: #2563eb;
+    transform: translateX(3px);
 }
 
 .signup input {
@@ -66,78 +88,225 @@ form .userHasAcct {
     padding: 10px;
     border-radius: 5px;
     margin: 10px 0px;
-    border: 0.12rem solid #FFAF7B;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+    font-family: 'Poppins';
 }
 
+.signup input:hover {
+    border-color: #3b82f6;
+    transform: translateX(2px);
+}
 
+.signup input:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    transform: translateX(2px);
+}
 
 .main-signup .signup-img-box {
     flex: 1;
-    background: #3A1C71;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8, #0f172a);
+    background-size: 300% 300%;
     height: 100vh;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+    animation: gradientBG 5s ease infinite;
+}
+
+/* Animated background effect */
+.main-signup .signup-img-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(59, 130, 246, 0.3) 0%,
+        rgba(37, 99, 235, 0.3) 25%,
+        rgba(29, 78, 216, 0.3) 50%,
+        rgba(15, 23, 42, 0.3) 100%);
+    animation: shimmer 3s ease infinite;
+}
+
+.signup-img-box .signup-text-box {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    animation: fadeInUp 0.8s ease;
 }
 
 .signup-img-box .signup-text-box .welcome {
     font-size: 20px;
+    opacity: 0;
+    animation: slideInLeft 0.5s ease forwards;
+    animation-delay: 0.3s;
 }
 
 .signup-text-box .meaning {
     font-size: 20px;
+    opacity: 0;
+    animation: slideInRight 0.5s ease forwards;
+    animation-delay: 0.6s;
 }
 
 .signup-text-box h1 {
-    font-size: 6rem;
-
-    /*typing effect*/
+    font-size: 4rem;
     overflow: hidden;
-    /* Ensures the content is not revealed until the animation */
-    border-right: 5px solid rgb(255, 255, 255);
-    /* The typwriter cursor */
+    border-right: 5px solid rgba(255, 255, 255, 0.8);
     white-space: nowrap;
-    /* Keeps the content on a single line */
     margin: 0 auto;
-    /* Gives that scrolling effect as the typing happens */
-    animation:
+    animation: 
         typing 2s steps(40, end),
         blink-caret .75s step-end infinite;
+    background: linear-gradient(135deg, #ffffff, #e2e8f0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-/*typing animation*/
+/* Keyframe Animations */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
 
 @keyframes typing {
     from {
         width: 0
     }
-
     to {
         width: 100%
     }
 }
 
 @keyframes blink-caret {
-
-    from,
-    to {
+    from, to {
         border-color: transparent
     }
-
     50% {
-        border-color: rgb(255, 255, 255);
+        border-color: rgba(255, 255, 255, 0.8);
     }
 }
 
-input:focus {
-    border-color: #FFAF7B;
-    outline: none;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-signup {
+        flex-direction: column;
+    }
+    
+    .main-signup .signup-img-box {
+        height: 50vh;
+    }
+    
+    .signup-text-box h1 {
+        font-size: 2.5rem;
+        white-space: normal;
+        border-right: none;
+        animation: none;
+    }
+    
+    .signup .getStarted {
+        font-size: 18px;
+    }
+}
+
+/* Loading animation for button (optional) */
+.signup form .SignUp-btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.signup form .SignUp-btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
