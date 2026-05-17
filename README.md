@@ -1,7 +1,7 @@
 ```markdown
 # Block-intel: Crypto Research Agent
 
-A crypto research platform powered by Google Gemini AI, Tavily API, and CoinMarketCap API that provides real-time market data, sentiment analysis, and actionable crypto insights.
+A crypto research platform powered by Langchain, Google Gemini AI, Tavily API, and CoinMarketCap API that provides real-time market data, sentiment analysis, and actionable crypto insights.
 
 ## How to Use (After Cloning)
 
@@ -72,7 +72,8 @@ Visit `http://localhost:5173` in your browser.
 ### Backend
 - **Node.js** 
 - **Express.js** 
-- **Supabase** 
+- **Supabase**
+- **Langchain**
 
 ### APIs & Services
 - **Google Gemini AI** - Intelligent market analysis and insights
