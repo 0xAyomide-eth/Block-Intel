@@ -80,20 +80,20 @@ Visit `http://localhost:5173` in your browser.
 - **Tavily API** - Real-time news and search intelligence
 - **CoinMarketCap API** - Live crypto prices, market cap, and volume data
 
-## ✨ Features
+## Features
 
 ### Data Integration
-- 💰 **CoinMarketCap API** - Live prices, market cap rankings, volume data
-- 📰 **Tavily API** - Real-time news, social media sentiment, market trends  
-- 🧠 **Gemini AI** - Intelligent market analysis 
+- **CoinMarketCap API** - Live prices, market cap rankings, volume data
+- **Tavily API** - Real-time news, social media sentiment, market trends  
+- **Gemini AI** - Intelligent market analysis 
 
 ### Core Capabilities
-- 🔍 Research any cryptocurrency with natural language
-- 📊 Track live prices
-- 📈 Analyze market sentiment from news and social media
-- 📱 Compare multiple cryptocurrencies side-by-side
+- Research any cryptocurrency with natural language
+- Track live prices
+- Analyze market sentiment from news and social media
+- Compare multiple cryptocurrencies side-by-side
 
-## 🎯 Use Cases
+## Use Cases
 
 - Real-time crypto price tracking and analysis
 - News aggregation and sentiment analysis
